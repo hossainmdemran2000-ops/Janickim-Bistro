@@ -1,12 +1,266 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bistro Pod Janickim - Improved Template</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bistro Pod Janickim | Poznań Food Court</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Custom brand accent colors adjusted for Tailwind v4 compatibility */
+        :root {
+            --color-brand-charcoal: #1a1a1a;
+            --color-brand-orange: #e05a36;
+            --color-brand-cream: #fdfbf7;
+        }
+    </style>
 </head>
-<body>
-<h1>Bistro Pod Janickim</h1>
-<p>Improved starter template with multilingual support (PL/EN/DE), reservation section, menu section, contact section and delivery partners (Uber Eats, Glovo, Wolt, Pyszne.pl).</p>
+<body class="bg-[#fdfbf7] text-[#1a1a1a] font-sans antialiased">
+
+    <!-- HEADER & NAVIGATION -->
+    <header class="sticky top-0 z-50 bg-[#1a1a1a] text-white shadow-md">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="text-xl font-bold tracking-wider text-[#e05a36]">BISTRO POD JANICKIM</a>
+            
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex space-x-6 items-center">
+                <a href="#about" class="hover:text-[#e05a36] transition">O nas</a>
+                <a href="#menu" class="hover:text-[#e05a36] transition">Menu</a>
+                <a href="#order" class="hover:text-[#e05a36] transition font-semibold text-[#e05a36]">Zamów Online</a>
+                <a href="#contact" class="hover:text-[#e05a36] transition">Kontakt</a>
+                <span class="text-gray-500">|</span>
+                <button class="text-xs border border-gray-500 px-2 py-1 rounded hover:bg-white hover:text-black transition">EN</button>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-2xl focus:outline-none" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-[#242424] border-t border-gray-800 px-4 py-4 space-y-3">
+            <a href="#about" class="block hover:text-[#e05a36]">O nas</a>
+            <a href="#menu" class="block hover:text-[#e05a36]">Menu</a>
+            <a href="#order" class="block text-[#e05a36] font-bold">Zamów Online</a>
+            <a href="#contact" class="block hover:text-[#e05a36]">Kontakt</a>
+            <div class="pt-2 border-t border-gray-700">
+                <button class="text-sm bg-gray-800 px-3 py-1 rounded">Language: EN</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative bg-cover bg-center h-[70vh] flex items-center" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80');">
+        <div class="container mx-auto px-4 text-white text-center md:text-left">
+            <!-- Dynamic Live Hours Tag -->
+            <div class="inline-flex items-center gap-2 bg-emerald-600 text-white text-xs font-semibold px-3 py-1.5 rounded-full mb-4 uppercase tracking-wider animate-pulse">
+                <span class="w-2 h-2 rounded-full bg-white"></span> Otwarte teraz (Zapraszamy!)
+            </div>
+            
+            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight max-w-3xl leading-tight">
+                Smaki, które łączą. <br class="hidden md:inline"><span class="text-[#e05a36]">Szybko, pysznie, w sercu Poznania.</span>
+            </h1>
+            <p class="mt-4 text-lg md:text-xl text-gray-300 max-w-xl">
+                Odwiedź nas na Kramarskiej 1 lub zamów swoje ulubione dania prosto pod drzwi przez aplikacje dostawcze.
+            </p>
+            <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                <a href="#menu" class="bg-[#e05a36] hover:bg-[#c84e2d] text-white px-8 py-3 rounded-lg font-medium text-center transition shadow-lg">Zobacz Menu</a>
+                <a href="#order" class="bg-white hover:bg-gray-100 text-[#1a1a1a] px-8 py-3 rounded-lg font-medium text-center transition shadow-lg">Zamów Dostawę</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT & SOCIAL PROOF -->
+    <section id="about" class="py-16 container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
+        <div>
+            <h2 class="text-3xl font-bold tracking-tight text-[#1a1a1a]">Klimat Food Courtu, <span class="text-[#e05a36]">Jakość Restauracji</span></h2>
+            <div class="flex items-center gap-2 my-3 text-amber-500">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star-half-stroke"></i>
+                <span class="text-sm text-gray-600 font-medium">(4.7 z 167 opinii Google)</span>
+            </div>
+            <p class="text-gray-600 leading-relaxed mt-4">
+                Bistro Pod Janickim to wyjątkowy punkt na kulinarnej mapie Poznania, zlokalizowany tuż przy Starym Rynku. Łączymy luźny, klimatyczny vibe strefy gastronomicznej z doskonałą jakością dań, które nie nadszarpną Twojego budżetu. 
+            </p>
+            <p class="text-gray-600 leading-relaxed mt-2">
+                U nas zjesz pyszny posiłek w przedziale cenowym <strong>20–40 zł</strong>. Świeże składniki, szybki serw i pasja do karmienia – to nas wyróżnia.
+            </p>
+        </div>
+        <!-- Testimonials Grid -->
+        <div class="bg-amber-50/60 p-6 rounded-2xl border border-amber-100 space-y-4">
+            <h3 class="text-lg font-semibold text-gray-800 mb-2"><i class="fa-solid fa-quote-left text-[#e05a36] mr-2"></i>Co mówią nasi goście:</h3>
+            <div class="bg-white p-4 rounded-xl shadow-xs border border-gray-100">
+                <p class="text-sm italic text-gray-600">"Genialne jedzenie w super cenie jak na sam środek Poznania. Porcje idealne, na pewno wrócę!"</p>
+                <span class="block text-xs font-semibold mt-2 text-gray-500">- Marcin K.</span>
+            </div>
+            <div class="bg-white p-4 rounded-xl shadow-xs border border-gray-100">
+                <p class="text-sm italic text-gray-600">"Pyszne, świeże i podane ekspresowo. Bardzo miła obsługa w food courcie."</p>
+                <span class="block text-xs font-semibold mt-2 text-gray-500">- Joanna B.</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- MENU PREVIEW -->
+    <section id="menu" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center max-w-xl mx-auto mb-12">
+                <h2 class="text-3xl font-bold tracking-tight">Karty Naszego Menu</h2>
+                <p class="text-gray-500 mt-2">Smacznie, świeżo i zawsze w rozsądnej cenie (20–40 zł)</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                <!-- Menu Item 1 -->
+                <div class="border-b border-gray-100 py-4 flex justify-between items-start">
+                    <div>
+                        <div class="flex items-center gap-2">
+                            <h3 class="font-bold text-lg text-gray-800">Klasyczny Zestaw Bistro</h3>
+                            <span class="bg-green-100 text-green-800 text-[10px] px-2 py-0.5 rounded font-medium">Bestseller</span>
+                        </div>
+                        <p class="text-sm text-gray-500 mt-1">Tradycyjne podejście do domowego obiadu w nowoczesnym wydaniu.</p>
+                    </div>
+                    <span class="font-bold text-lg text-[#e05a36] whitespace-nowrap">29 zł</span>
+                </div>
+                <!-- Menu Item 2 -->
+                <div class="border-b border-gray-100 py-4 flex justify-between items-start">
+                    <div>
+                        <div class="flex items-center gap-2">
+                            <h3 class="font-bold text-lg text-gray-800">Miska Sezonowa</h3>
+                            <span class="bg-amber-100 text-amber-800 text-[10px] px-2 py-0.5 rounded font-medium">Wege</span>
+                        </div>
+                        <p class="text-sm text-gray-500 mt-1">Kompozycja świeżych warzyw, kasz oraz autorskiego sosu ziołowego.</p>
+                    </div>
+                    <span class="font-bold text-lg text-[#e05a36] whitespace-nowrap">34 zł</span>
+                </div>
+                <!-- Menu Item 3 -->
+                <div class="border-b border-gray-100 py-4 flex justify-between items-start">
+                    <div>
+                        <div class="flex items-center gap-2">
+                            <h3 class="font-bold text-lg text-gray-800">Ostra Szarpana Wołowina</h3>
+                            <span class="bg-red-100 text-red-800 text-[10px] px-2 py-0.5 rounded font-medium">Ostre <i class="fa-solid fa-pepper-hot"></i></span>
+                        </div>
+                        <p class="text-sm text-gray-500 mt-1">Długo pieczone mięso z dodatkiem wyrazistych przypraw i pikli.</p>
+                    </div>
+                    <span class="font-bold text-lg text-[#e05a36] whitespace-nowrap">39 zł</span>
+                </div>
+                <!-- Menu Item 4 -->
+                <div class="border-b border-gray-100 py-4 flex justify-between items-start">
+                    <div>
+                        <h3 class="font-bold text-lg text-gray-800">Zupa Dnia</h3>
+                        <p class="text-sm text-gray-500 mt-1">Codziennie coś świeżego, przygotowywanego od podstaw przez szefa kuchni.</p>
+                    </div>
+                    <span class="font-bold text-lg text-[#e05a36] whitespace-nowrap">20 zł</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CRUCIAL FEATURE: DELIVERY PORTAL -->
+    <section id="order" class="py-16 bg-[#1a1a1a] text-white">
+        <div class="container mx-auto px-4 text-center max-w-3xl">
+            <h2 class="text-3xl font-bold tracking-tight">Ochota na jedzenie w domu?</h2>
+            <p class="text-gray-400 mt-3 max-w-xl mx-auto">
+                Nie prowadzimy własnej floty dostawczej, ale współpracujemy z najlepszymi. Zamów z dostawą pod drzwi za pośrednictwem swojej ulubionej aplikacji:
+            </p>
+            
+            <!-- Delivery Partners Buttons -->
+            <div class="mt-10 grid grid-cols-2 md:grid-cols-4 gap-4">
+                <!-- Pyszne.pl -->
+                <a href="https://www.pyszne.pl" target="_blank" class="flex flex-col items-center justify-center p-5 bg-[#ff8000] hover:bg-[#e07000] rounded-xl transition font-bold text-white shadow-md">
+                    <i class="fa-solid fa-bowl-food text-2xl mb-2"></i>
+                    <span>Pyszne.pl</span>
+                </a>
+                <!-- Uber Eats -->
+                <a href="https://www.ubereats.com" target="_blank" class="flex flex-col items-center justify-center p-5 bg-black border border-gray-700 hover:bg-gray-900 rounded-xl transition font-bold text-white shadow-md">
+                    <i class="fa-solid fa-car text-2xl mb-2 text-emerald-400"></i>
+                    <span>Uber Eats</span>
+                </a>
+                <!-- Wolt -->
+                <a href="https://www.wolt.com" target="_blank" class="flex flex-col items-center justify-center p-5 bg-[#00c2e8] hover:bg-[#00a2c2] rounded-xl transition font-bold text-white shadow-md">
+                    <i class="fa-solid fa-bicycle text-2xl mb-2"></i>
+                    <span>Wolt</span>
+                </a>
+                <!-- Glovo -->
+                <a href="https://www.glovoapp.com" target="_blank" class="flex flex-col items-center justify-center p-5 bg-[#ffc72c] hover:bg-[#eab318] rounded-xl transition font-bold text-gray-900 shadow-md">
+                    <i class="fa-solid fa-box text-2xl mb-2"></i>
+                    <span>Glovo</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- BOOKINGS / INQUIRIES -->
+    <section class="py-16 container mx-auto px-4 max-w-xl">
+        <div class="bg-white p-8 rounded-2xl shadow-xs border border-gray-100">
+            <h3 class="text-2xl font-bold text-center mb-2">Rezerwacje Grupowe & Catering</h3>
+            <p class="text-gray-500 text-sm text-center mb-6">Organizujesz spotkanie firmowe lub event w Poznańskim food courcie? Napisz do nas.</p>
+            
+            <form class="space-y-4">
+                <div>
+                    <label class="block text-xs font-semibold text-gray-600 uppercase mb-1">Imię / Firma</label>
+                    <input type="text" class="w-full border border-gray-200 rounded-lg p-2.5 focus:outline-[#e05a36]" placeholder="Twoje imię...">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-gray-600 uppercase mb-1">Email</label>
+                    <input type="email" class="w-full border border-gray-200 rounded-lg p-2.5 focus:outline-[#e05a36]" placeholder="adres@email.com">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-gray-600 uppercase mb-1">Wiadomość / Szczegóły rezerwacji</label>
+                    <textarea rows="3" class="w-full border border-gray-200 rounded-lg p-2.5 focus:outline-[#e05a36]" placeholder="Jak możemy pomóc?"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-[#e05a36] hover:bg-[#c84e2d] text-white font-medium py-2.5 rounded-lg transition">Wyślij zapytanie</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER / CONTACT -->
+    <footer id="contact" class="bg-[#1a1a1a] text-gray-400 pt-12 pb-6 border-t border-gray-800">
+        <div class="container mx-auto px-4 grid md:grid-cols-3 gap-8 mb-8">
+            <!-- Col 1: Contact Details -->
+            <div>
+                <h4 class="text-white font-bold mb-4 tracking-wide">BISTRO POD JANICKIM</h4>
+                <p class="text-sm flex items-center gap-3 mb-2">
+                    <i class="fa-solid fa-location-dot text-[#e05a36]"></i> Kramarska 1, 61-765 Poznań
+                </p>
+                <p class="text-sm flex items-center gap-3 mb-2">
+                    <i class="fa-solid fa-phone text-[#e05a36]"></i> 690 114 303
+                </p>
+                <div class="flex gap-4 mt-4 text-xl">
+                    <a href="#" class="hover:text-white transition"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" class="hover:text-white transition"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+            
+            <!-- Col 2: Business Hours -->
+            <div>
+                <h4 class="text-white font-bold mb-4 tracking-wide">Godziny Otwarcia</h4>
+                <ul class="text-sm space-y-1.5">
+                    <li class="flex justify-between"><span>Wtorek - Sobota:</span> <span class="text-white">11:30 - 20:00</span></li>
+                    <li class="flex justify-between"><span>Niedziela:</span> <span class="text-white">12:00 - 18:00</span></li>
+                    <li class="flex justify-between text-gray-600"><span>Poniedziałek:</span> <span>Zamknięte</span></li>
+                </ul>
+            </div>
+
+            <!-- Col 3: Map Placeholder -->
+            <div>
+                <h4 class="text-white font-bold mb-4 tracking-wide">Lokalizacja</h4>
+                <div class="w-full h-32 bg-gray-800 rounded-lg overflow-hidden flex items-center justify-center text-xs text-gray-500">
+                    <!-- Google Map embed can go right here -->
+                    <span class="p-4 text-center"><i class="fa-solid fa-map-location-dot text-lg mb-1 block text-gray-600"></i> [Interaktywna Mapa Google]</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container mx-auto px-4 pt-6 border-t border-gray-800 text-center text-xs">
+            &copy; 2026 Bistro Pod Janickim. Wszelkie prawa zastrzeżone.
+        </div>
+    </footer>
+
 </body>
 </html>
+
